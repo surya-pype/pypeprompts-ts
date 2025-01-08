@@ -11,14 +11,14 @@ export class PromptAnalyticsTracker {
   private promptVersionUrl: string;
   private enabled: boolean;
 
-  constructor(projectToken: string, enabled: boolean = true) {
+  constructor(projectToken: string, enabled: boolean = true, customDashboardUrl?: string) {
     if (!projectToken) {
       throw new PromptAnalyticsError('project_token is required');
     }
 
     this.instanceId = uuidv4();
     this.projectToken = projectToken;
-    this.dashboardUrl = config.DEFAULT_DASHBOARD_URL;
+    this.dashboardUrl = customDashboardUrl || config.DEFAULT_DASHBOARD_URL;
     this.promptVersionUrl = config.DEFAULT_PROMPT_VERSIONS_URL;
     this.enabled = enabled;
   }

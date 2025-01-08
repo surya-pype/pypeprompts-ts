@@ -5,7 +5,7 @@ export declare class PromptAnalyticsTracker {
     private dashboardUrl;
     private promptVersionUrl;
     private enabled;
-    constructor(projectToken: string, enabled?: boolean);
+    constructor(projectToken: string, enabled?: boolean, customDashboardUrl?: string);
     track(workflowName: string, properties: Properties): Promise<string>;
     private createAnalyticsItem;
     private convertSetsToArrays;

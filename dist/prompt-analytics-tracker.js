@@ -18,13 +18,13 @@ const uuid_1 = require("uuid");
 const config_1 = require("./config");
 const prompt_analytics_error_1 = require("./prompt-analytics-error");
 class PromptAnalyticsTracker {
-    constructor(projectToken, enabled = true) {
+    constructor(projectToken, enabled = true, customDashboardUrl) {
         if (!projectToken) {
             throw new prompt_analytics_error_1.PromptAnalyticsError('project_token is required');
         }
         this.instanceId = (0, uuid_1.v4)();
         this.projectToken = projectToken;
-        this.dashboardUrl = config_1.config.DEFAULT_DASHBOARD_URL;
+        this.dashboardUrl = customDashboardUrl || config_1.config.DEFAULT_DASHBOARD_URL;
         this.promptVersionUrl = config_1.config.DEFAULT_PROMPT_VERSIONS_URL;
         this.enabled = enabled;
     }

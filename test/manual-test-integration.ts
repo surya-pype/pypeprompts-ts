@@ -1,14 +1,12 @@
-//manual-test-integration.ts
-
 import { PromptAnalyticsTracker } from '../src/prompt-analytics-tracker';
 import { PromptAnalyticsError } from '../src/prompt-analytics-error';
 
 async function manualIntegrationTest() {
   const PROJECT_TOKEN =
-    'f073bd9f6a186298cb16ed968d88d24ede4a811ed4e7e29ec75f451cb3117c78';
-  const DASHBOARD_URL = 'http://app.pypeai.com/api/analytics';
+    '33684284ece606dfcfcb827d0e5f6710aac740330f4ec869f63fb253b14dd5ce';
+  const DASHBOARD_URL = 'http://localhost:3000/api/analytics';
 
-  const tracker = new PromptAnalyticsTracker(PROJECT_TOKEN, true, DASHBOARD_URL);
+  const tracker = new PromptAnalyticsTracker(PROJECT_TOKEN, true);
 
   const input_msg = `
     {https://storage.googleapis.com/data-scaling/without-rag-final-wireframe/input/Image%2012-without-rag-basic-prompt.jpg +
